@@ -40,7 +40,6 @@ object Main {
       .filter(_._json().get().asObject().isPresent)
       .map(_._json().get().asObject().get().get("text")).toSeq
 
-
     val json = mapper.readTree(responses.head.toString)
 
     SendEmail.send(json)
